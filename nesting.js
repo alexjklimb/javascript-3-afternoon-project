@@ -51,6 +51,16 @@ var employees = [
 */
 
 //Code Here
+employeeUpdater=()=>{
+  for(i of employees){
+    if (i.firstName==="Lorie"){
+      i.department="HR" 
+  }
+    else if(i.firstName==="Theo"){
+      employees.splice(employees.indexOf(i),1)
+    }
+}
+return employees}
 
 
 
@@ -69,6 +79,9 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+removeDuplicates= ()=>{
+  return Array.from(new Set(workplaceAccidents))
+}
 
 
 
@@ -97,8 +110,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity=cat.catFriends[0].activities[1];
+var fluffy2ndFriend="Lazy Bones";
 
 
 
@@ -139,6 +152,11 @@ var myCar = {
 */
 
 //Code Here
+recordCleaner=()=>{
+  for(i in myCar.accidents){
+    myCar.accidents[i].atFaultForAccident=false
+  }
+}
 
 
 
@@ -158,5 +176,14 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+looper = ()=>{
+  for(arr in numsArr){
+    console.log(arr)
+    for (i=0; i<numsArr[arr].length; i++){
+      numsArr[arr][i]%2===0?numsArr[arr][i]="even":numsArr[arr][i]="odd"
+    }
+  }
+  return numsArr
+}
 
 

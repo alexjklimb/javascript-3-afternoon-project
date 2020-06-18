@@ -10,18 +10,17 @@
   First we'll look at the difference between accessing property values in a for in loop and accessing the property name in a for in loop.
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
+ var values = {
+   one: 'These',
+   two: ' are',
+   three: ' the',
+   four: ' property',
+  five: ' values.'
+ } 
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
-
-// for(var key in values) {
-//   console.log(values[key])
-// }
+ for(var key in values) {
+   console.log(values[key])
+ }
 
 /*
   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
@@ -40,9 +39,12 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  string=""
+for (i in obj){
+string +=obj[i]
 }
-
+return string
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -54,7 +56,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let greaterThan10 = obj =>{
+  for (i in obj){
+    if(obj[i]>10){
+      obj[i]=0
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +75,12 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let double= obj =>{
+  for(i in obj){
+    obj[i]*=2
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +94,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let secrets= obj=>{
+  let string=""
+  for (i in obj){
+    if (i[0]==="s"&&i[1]==="h"){
+      string+=obj[i]
+    }
+  }
+  return string
+}
 
 
 /* 
@@ -111,7 +133,10 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+let removePassword= obj=>{
+  delete obj["password"]
+  return obj
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -130,6 +155,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+for(i in deleteTheBigNumbers){
+  if( deleteTheBigNumbers[i]>100){
+
+  delete deleteTheBigNumbers[i]
+}
+}
 
 
 
@@ -143,7 +174,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+let startsWithK= obj=>{
+  for(i in obj){
+  i[0]==="k" ? delete obj[i] : null
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -159,4 +195,9 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+let hiddenTreasure = obj=>{
+  for(i in obj){
+    obj[i].includes("treasure")? null : delete obj[i]
+  }
+  return obj
+}
